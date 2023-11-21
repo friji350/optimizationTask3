@@ -854,8 +854,9 @@ int main() {
     int supplySum = 0;
     int demandSum = 0;
 
-
+    cout << "Enter the number of rows\n";
     cin >> row;
+    cout << "Enter the number of columns\n";
     cin >> column;
 
     cout << "Enter the supply vector\n";
