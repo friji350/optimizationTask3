@@ -723,7 +723,7 @@ public:
         }
         cout << mainMatrix;
         cout << additionalMatrix;
-        cout << "\nmin cost of path according to Russel's method: " << S << "\n";
+        cout << "\nmin cost of path according to Russell's method: " << S << "\n";
     }
 
     void vogel(Matrix matrix, int rowSize, int columnSize, ColumnVector supply, ColumnVector demand) {
@@ -844,7 +844,7 @@ public:
                 }
             }
         }
-        cout << "\nmin cost of path according to Vogel method: " << S << "\n";
+        cout << "\nmin cost of path according to Vogel`s method: " << S << "\n";
     }
 };
 
@@ -858,12 +858,15 @@ int main() {
     cin >> row;
     cin >> column;
 
+    cout << "Enter the supply vector\n";
     ColumnVector supply(row);
     cin >> supply;
 
+    cout << "Enter the demand vector\n";
     ColumnVector demand(column);
     cin >> demand;
 
+    cout << "Enter the C matrix\n";
     Matrix mainMatrix(row + 1, column + 1);
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < column; j++) {
@@ -898,9 +901,9 @@ int main() {
     cout << "\nSolution by NorthWest corner method\n";
     Solution solution = *new Solution();
     solution.northWest(mainMatrix, column, row);
-    cout << "\nSolution by Russel's method\n";
+    cout << "\nSolution by Russell's method\n";
     solution.russel(mainMatrix, column, row);
-    cout << "\nSolution by Vogel method\n";
+    cout << "\nSolution by Vogel`s method\n";
     solution.vogel(mainMatrix, row, column, supply, demand);
     return 0;
 }
